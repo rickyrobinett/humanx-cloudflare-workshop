@@ -9,7 +9,23 @@
 	"compatibility_date": "2025-03-11",
 	"observability": {
 		"enabled": true
-	}
+	},
+	"ai": {
+		"binding": "AI"
+	},
+	"vectorize": [
+		{
+		"binding": "VECTORIZE",
+		"index_name": "vector-index"
+		}
+	],
+	"d1_databases": [
+		{
+		  "binding": "DB",
+		  "database_name": "database",
+		  "database_id": "ee7259bf-3b86-4f4a-9cc8-aa47573e7209"
+		}
+	]
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
