@@ -10,15 +10,6 @@
 
 export default {
 	async fetch(request, env, ctx) {
-		const answer = await env.AI.run("@cf/meta/llama-3.1-8b-instruct", {
-			messages: [
-				{
-					role: "user",
-					content: "What is the capital of the moon?",
-				},
-			],
-		});
-		
-		return new Response(answer.response);
+		return new Response('Hello World!');
 	},
 };
