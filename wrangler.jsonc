@@ -25,6 +25,13 @@
 		  "database_name": "database",
 		  "database_id": "ee7259bf-3b86-4f4a-9cc8-aa47573e7209"
 		}
+	],
+	"workflows": [
+		{
+		"name": "rag",
+		"binding": "RAG_WORKFLOW",
+		"class_name": "RAGWorkflow"
+		}
 	]
 	/**
 	 * Smart Placement
