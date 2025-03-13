@@ -27,7 +27,7 @@ export class RAGWorkflow extends WorkflowEntrypoint {
 }
 ```
 
-3) Add the following line to your `app.get(/)` function to trigger your workflow: `c.env.RAG_WORKFLOW.create({ params: "test" })
+3) Add the following line to your `app.get(/)` function to trigger your workflow: `c.env.RAG_WORKFLOW.create({ params: "test" })`
 4) Deploy your workflow by runing `npx wrangler deploy` in terminal
 5) Test your workflow by running `npx wrangler dev --remote` in one terminal window, and `npx wrangler tail` in another window. Load your app and see the console.log in the terminal where you're running `npx wrangler tail`
 6) Update your workflow in `src/index.js` to store information for our vector database:

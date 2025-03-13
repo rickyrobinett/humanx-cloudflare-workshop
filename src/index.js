@@ -3,7 +3,7 @@ import { WorkflowEntrypoint } from "cloudflare:workers";
 
 const app = new Hono();
 app.get('/', async (c) => {
-	const question = c.req.query('text') || "What pizza topping is the best?"
+	const question = c.req.query('text') || "What pizza topping is the best for children?"
 
 	if (!c.env.VECTORIZE) {
 		return c.text('Vector index not configured', 500);
@@ -13,7 +13,7 @@ app.get('/', async (c) => {
 	const vectors = embeddings.data[0]
 
 	try {
-		const vectorQuery = await c.env.VECTORIZE.query(vectors, { topK: 1 });
+		const vectorQuery = await c.env.VECTORIZE.query(vectors, { topK: 5 });
 		let vecId;
 		if (vectorQuery.matches && vectorQuery.matches.length > 0 && vectorQuery.matches[0]) {
 			vecId = vectorQuery.matches[0].id;
@@ -32,9 +32,10 @@ app.get('/', async (c) => {
 
 		const systemPrompt = `When answering the question or responding, use the context provided, if it is provided and relevant.`
 
+		console.log(contextMessage);
 
 		const { response: answer } = await c.env.AI.run(
-			'llama-3.3-70b-instruct-fp8-fast',
+			'@cf/meta/llama-3.3-70b-instruct-fp8-fast',
 			{
 			messages: [
 				...(notes.length ? [{ role: 'system', content: contextMessage }] : []),
