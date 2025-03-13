@@ -119,7 +119,7 @@ app.get('/', async (c) => {
 
 
 		const { response: answer } = await c.env.AI.run(
-			'llama-3.3-70b-instruct-fp8-fast',
+			'@cf/meta/llama-3.3-70b-instruct-fp8-fast',
 			{
 			messages: [
 				...(notes.length ? [{ role: 'system', content: contextMessage }] : []),
