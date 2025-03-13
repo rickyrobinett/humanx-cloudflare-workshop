@@ -34,7 +34,7 @@ app.get('/', async (c) => {
 
 
 		const { response: answer } = await c.env.AI.run(
-			'@cf/meta/llama-3-8b-instruct',
+			'llama-3.3-70b-instruct-fp8-fast',
 			{
 			messages: [
 				...(notes.length ? [{ role: 'system', content: contextMessage }] : []),
