@@ -5,10 +5,8 @@ Steps to complete step 3:
 1) Update `wrangler.jsonc` to add your AI binding
 
 ```
-{
-  "ai": {
+"ai": {
     "binding": "AI"
-  }
 }
 ```
 
@@ -16,11 +14,11 @@ Steps to complete step 3:
 
 ```
 app.get("/", async (c) => {
-	const answer = await c.env.AI.run("llama-3.3-70b-instruct-fp8-fast", {
+	const answer = await c.env.AI.run("@cf/meta/llama-3.3-70b-instruct-fp8-fast", {
 		messages: [
 			{
 				role: "user",
-				content: "What is the capital of the moon?",
+				content: "Tell me about Shin Lim.",
 			},
 		],
 	});
