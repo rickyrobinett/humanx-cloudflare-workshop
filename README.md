@@ -148,7 +148,7 @@ Our agenda:
 
 ~~🔧 Integrate the Hono framework~~
 
-~~🤖 Add Cloudflare Workers AI for AI Infernece~~
+~~🤖 Add Cloudflare Workers AI for AI Inference~~
 
 ~~🔍 Adding Embeddings using Cloudflare D1 and Vectorize~~
 
