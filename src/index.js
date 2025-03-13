@@ -2,7 +2,7 @@ import { Hono } from "hono";
 const app = new Hono();
 
 app.get("/", async (c) => {
-	const answer = await c.env.AI.run("@cf/meta/llama-3.1-8b-instruct", {
+	const answer = await c.env.AI.run("llama-3.3-70b-instruct-fp8-fast", {
 		messages: [
 			{
 				role: "user",
